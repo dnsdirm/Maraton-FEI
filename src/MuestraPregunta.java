@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JTextPane;
 
@@ -66,7 +68,16 @@ public class MuestraPregunta extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+/*Cuando se presione el boton cerrar de la ventana se mostrara el dialogo de confirmacion */
 		
+		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new WindowAdapter() { 
+			public void windowClosing(WindowEvent evt) {
+				MuestraPregunta.this.tablero.setRespCorrecta(false);
+				MuestraPregunta.this.t.stop();
+				MuestraPregunta.this.dispose();
+			}
+		}); 
 		opca = new JButton("a");
 		opca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
