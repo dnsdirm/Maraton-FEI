@@ -1,10 +1,16 @@
 import java.awt.EventQueue;
+import java.awt.Image;
 
+import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 
 public class Maraton {
@@ -50,6 +56,8 @@ public class Maraton {
 		frmMaraton.setBounds(100, 100, 790, 600);
 		frmMaraton.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMaraton.getContentPane().setLayout(null);
+		Image icono = new ImageIcon(JFrame.class.getResource("/logo/logo.jpg")).getImage();
+		frmMaraton.setIconImage(icono);
 		
 		JButton btnNuevoJuego = new JButton("Nuevo Juego");
 		btnNuevoJuego.addActionListener(new ActionListener() {
@@ -104,5 +112,16 @@ public class Maraton {
 		});
 		btnSalir.setBounds(591, 507, 173, 44);
 		frmMaraton.getContentPane().add(btnSalir);
+		
+		JLabel lblImg = new JLabel("img");
+		lblImg.setBounds(268, 262, 241, 151);
+		ImageIcon fot = new ImageIcon(Maraton.class.getResource("/logo/logo.jpg"));
+		Icon presenta = new ImageIcon(fot.getImage().getScaledInstance(lblImg.getWidth(), lblImg.getHeight(), Image.SCALE_DEFAULT));
+		lblImg.setIcon(presenta);
+		frmMaraton.repaint();
+		
+		//lblImg.setIcon(new ImageIcon(Maraton.class.getResource("/logo/logo.jpg")));
+		
+		frmMaraton.getContentPane().add(lblImg);
 	}
 }

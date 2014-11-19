@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -53,6 +55,8 @@ new Color(255, 245, 238), new Color(255, 250, 205), new Color(255, 255, 240), ne
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Image icono = new ImageIcon(JFrame.class.getResource("/logo/logo.jpg")).getImage();
+		this.setIconImage(icono);
 		mara = frmMaraton;
 		mara.setVisible(false);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

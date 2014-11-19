@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 @SuppressWarnings("serial")
@@ -44,6 +46,11 @@ public class Instrucciones extends JDialog {
 		contentPanel.setLayout(null);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Instrucciones.this.dispose();
+			}
+		});
 		btnAceptar.setBounds(513, 374, 89, 23);
 		contentPanel.add(btnAceptar);
 		
