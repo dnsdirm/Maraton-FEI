@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+
 
 public class Pregunta {
 	private int numero;

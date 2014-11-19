@@ -10,8 +10,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.event.*; 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.awt.GridLayout;
@@ -25,10 +23,10 @@ public class Tablero extends JFrame {
 	private ArrayList<Jugador> jugadores;
 	private Jugador ignorancia;
 	private ArrayList<Kilometro> kilometros;
-	@SuppressWarnings("unused")
 	private RepositorioPreguntas rp;
 	private boolean respCorrecta;
 	private int[] nums = 	{0,1,2,3,4,5,6,23,24,25,26,27,28,7,22,39,40,41,42,29,8,21,38,47,48,43,30,9,20,37,46,45,44,31,10,19,36,35,34,33,32,11,18,17,16,15,14,13,12};
+	@SuppressWarnings("unused")
 	private int[] colores = {0,1,2,3,4,5,6,23,24,25,26,27,28,7,22,39,40,41,42,29,8,21,38,47,48,43,30,9,20,37,46,45,44,31,10,19,36,35,34,33,32,11,18,17,16,15,14,13,12}; 
 	private Color[] rgbColores = {
 new Color(124,252,0),     new Color(255, 250,250),  new Color(248, 248 ,255), new Color(245, 245 ,245),new Color(220, 220 ,220), new Color(255, 250 ,240),   new Color(253, 245 ,230),
@@ -281,7 +279,7 @@ new Color(255, 245, 238), new Color(255, 250, 205), new Color(255, 255, 240), ne
 	{
 		BaseDeDatos bd = new BaseDeDatos("bdmaraton.db3");
 		bd.conectar();
-		ResultSet rs = bd.ejecutaConsulta("insert into records values(\"" + j.getNombre() + "\","+ j.getnPreguntas() + ");");
+		bd.ejecutaConsulta("insert into records values(\"" + j.getNombre() + "\","+ j.getnPreguntas() + ");");
 		bd.desconectar();
 	}
 	/**

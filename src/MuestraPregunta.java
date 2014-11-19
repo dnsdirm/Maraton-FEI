@@ -1,6 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -23,6 +21,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JTextPane;
 
 
+@SuppressWarnings("serial")
 public class MuestraPregunta extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
